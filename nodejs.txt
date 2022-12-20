@@ -1,0 +1,14 @@
+http://127.0.0.1  -> 본인 컴퓨터 주소
+주소의 포트 12010에 접속 http://127.0.0.1:12010
+localhost:12010
+
+파워쉘 보안오류 푸는법
+PS보안푸는법
+1. 리스트확인: powershell Get-ExecutionPolicy -List
+2. 리모트권한주기: powershell Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+3. 1번항목으로 리스트 한번 더 확인해보기
+
+응답코드 종류
+https://pingfanzhilu.tistory.com/entry/HTTP-HTTP-%EC%83%81%ED%83%9C-%EC%BD%94%EB%93%9C100-200-300-400-500-%EC%A0%95%EB%A6%AC
+4별도: 원래대로 보안 잠그기
+powershell Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser

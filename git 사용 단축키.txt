@@ -1,0 +1,31 @@
+git log
+shift : q  빠져나옴(q도 가능)
+git log --oneline comut6자리 나옴()
+
+git status 상태
+git add .	스테이징 시킴
+git add -A (일반) 스테이징한거 모두올림
+git commut -m '커밋내용'
+
+git checkout (HEAD~1 1칸 뒤로)
+// 이동 (해시는 8자리 필요 or branch 이름)
+git branch (삭제 옵션 -D) 추가는 branch뒤에 이름만
+// 내가(head) 어디있는지
+git remote  
+// 원격접속 목록 
+
+git init (초기화) // or 폴더삭제.git
+git config user.email "이메일주소"
+git config user.name "닉네임"
+
+git merge (병합)
+git reset (삭제 되돌림)
+git revert (삭제내역포함 되돌림)
+
+git push --force (push가 안될때)
+git commit --amend (커밋 잘못했을때 수정)
+
+gitignore (필수;항목무시) 파일생성
+
+git fetch (ex1.2 나옴 최신뉴스)
+git pull 당겨 내려받기
