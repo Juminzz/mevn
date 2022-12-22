@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const face = Math.random()<0.8 // true가 80퍼
+        const watch = ()=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve('이상형 발견!!💕💕💕')
+                })
+            },1000)
+        }
+        watch()
+        const talk = (num)=>{
+            return new Promise((resolve,reject)=>{      
+                setTimeout(()=>{
+            if(face){
+                resolve(num+'=> 연락처좀 주세요.😂')
+            }else{
+                reject(new Error(num+'=> 바로철벽😡😠'))
+            }
+                
+        },1000)
+    })
+    }   
+        const take = (seeu)=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{resolve(seeu+'=> 또 만나요!! 🖐🖐🖐')})},1000)
+        }
+
+        watch()
+        .then(talk)
+        .catch((me)=>{
+            return me = '혼자있고 싶어요'
+        })
+        .then(take)
+        .then(console.log)
+        .catch(console.log)
+    </script>
+</body>
+</html>

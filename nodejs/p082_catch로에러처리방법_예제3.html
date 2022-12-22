@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pm = new Promise((resolve,reject)=>{
+            console.log('first Loading...')
+            setTimeout(()=>{
+               resolve(10)},1000)
+        })
+        // pm.then(num=>console.log(num+3*2))  // 곱셈부터 계산함
+        
+        pm
+        .then(num=>num+3)
+        .then((num)=>{console.log('가져온 결과 값1 : '+ num)
+        return num
+    })
+        .then(num=>num*2)
+        .then(num=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve(num-5)   
+                },1000);
+            })
+        })
+        .then(num=>console.log('가져온 결과 값2 : '+ num)) // 곱셈 덧셈이 의도한대로 이뤄짐  
+    </script>
+</body>
+</html>
