@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>환율조회</title>
+    <script src="./p083/환율조회용.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const einput = document.createElement('input');
+            const espan = document.createElement('span');
+            const ebutton = document.createElement('button');
+            const ep = document.createElement('p');
+            const ep2 = document.createElement('p');
+            const ep3 = document.createElement('p');
+            document.body.append(einput,espan,ebutton,ep,ep2,ep3)
+            ebutton.textContent = '계산'
+            espan.textContent = '달러'
+            let dollar = 1
+            let won
+            value().then(mydata=>{
+                console.log('환율정보읽음')
+                alert(`환율정보가 현재가 ${mydata}원으로 갱신되었습니다.`)
+                ep.textContent = `갱신된 환율정보는 1달러에 ${mydata}원으로 갱신되었습니다.`
+                won = mydata
+            })
+
+            ebutton.addEventListener('click',()=>{
+                dollar =  + einput.value // input의 값을 dollar로 넣음
+                if(isNaN(dollar)){
+                    ep.textContent = '숫자를 입력하세요'  
+                    return  
+                }
+                ep.textContent = `${dollar} 달러에 ${(won*dollar).toLocaleString('ko-KR',2)}원`
+
+                const url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD'
+                fetch(url)
+                .then((response)=>response.json())  // url을 json 형식으로 바꿈
+                .then(data=>{
+                    console.log(data[0].basePrice)
+                    const aa = (data[0].basePrice * dollar)
+                    const bb = aa.toLocaleString("ko-KR",2)
+                    ep2.textContent= `현재 환율 : ${data[0].basePrice}`
+                    ep3.textContent= `환율 : ${bb}` 
+                })
+            });
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
