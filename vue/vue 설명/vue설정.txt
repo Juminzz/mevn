@@ -1,0 +1,7 @@
+관리 > 설정 > format on save  > editor format on save 체크
+
+컨트롤 +쉬프트+ p => vue 문법
+컨트롤 +쉬프트+ p => 자바스크립트도 똑같이
+
+
+format document > 구성 > prettier 선택해야함

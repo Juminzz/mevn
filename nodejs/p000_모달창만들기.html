@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>모달창 만들기</title>
+    <style>
+        .modal{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background-color: rgba(0,0,0,0.4);
+        }
+        /* 붙어있는경우 and가 됨 */
+        .modal.show{
+            display: block;
+        }
+        .modal-body{
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            min-width: 250px;
+            height: 400px;
+            padding: 20px;
+            text-align: start;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const button = document.getElementById('ok')
+            const modal = document.querySelector('.modal')
+            const modalBody = document.querySelector('.modal-body')
+            button.addEventListener('click',()=>{
+                modal.classList.add('show')
+            }); 
+            modal.addEventListener('click',()=>{
+                modal.classList.remove('show')
+                // console.log(modal.classList.contains('show'));
+                    // console.log('d')
+                })
+        })
+    </script>
+</head>
+<body>
+    <!-- 모달 만들때 배경을 검은색 그다음 만들 모달 1개흰색으로 -->
+    <div class="modal">
+        <div class="modal-body">
+            <span>게시글작성</span>
+            <hr>
+            <div class="modal-title">
+                <span>작성자</span>
+            </div>
+            <span>제목</span>
+            <input type="text">
+        </div>
+    </div>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni vero nostrum illo maiores fugit, quisquam voluptatum aspernatur sint dolorum corrupti, doloribus, exercitationem minus sapiente veritatis placeat laborum dolorem! Soluta, excepturi ducimus doloribus similique expedita id eos assumenda eveniet, nobis aliquam a repellendus. Sint quam alias ipsam expedita, commodi incidunt? Voluptatibus consectetur culpa velit deserunt magni, quia magnam repellendus aspernatur quasi assumenda, quidem possimus harum ipsam minus debitis dolorem, earum inventore aut quae. Eum quod molestiae fugit ullam, ab iste reiciendis. Molestias facere illo nostrum ullam ipsa doloremque, ipsum dolorem dolor impedit. Voluptatem quasi nesciunt doloribus aliquam, ea dicta? Corporis, explicabo. Saepe, eos. Amet accusamus vero non reprehenderit perferendis dignissimos voluptate nihil sunt ullam? Obcaecati impedit tempore rerum eaque porro aspernatur quibusdam? Quam deserunt similique eligendi omnis cumque error, hic laboriosam enim. Mollitia cumque vel modi, illum ipsam tempora porro velit.</h2>
+    <button id="ok">
+        확인
+    </button>
+</body>
+</html>

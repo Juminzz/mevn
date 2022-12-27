@@ -1,48 +1,31 @@
 <template>
-  <div>
-  <h2>구구단 표 만들기</h2>
-  <button v-on:click="func()">시작하기</button><br><br><br><br><br><br>
-  </div>
-  
-    <table v-on:click="func()" class="dd">
-      <tr></tr>
-      <tr></tr>  
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-    </table>
+  <nav>
+    <router-link to="/">홈페이지</router-link> |
+    <router-link to="/ex_1">예제1</router-link> |
+    <router-link to="/ex_2">예제2</router-link>
+  </nav>
+  <router-view/>
 </template>
 
-<script>
-  export default {
-    name: 'app',
-    data (){
-      return{
-        gu :0,
-      }
-    },
-    methods:{
-      func :function(){
-        prompt('2 ~ 9 중 하나를 적어주세요');
-        let p =document.createElement('p');
-        if(prompt){
-          document.body.append(p)
-          p.textContent = prompt.value
-        }
-      },
-      // gugu :function(){
-      //   for(let i=0;i<10;i++){
-      //     td += 'dd'
-      //   }
-      // }
-    }
-  }
-</script>
-
 <style>
-  
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>

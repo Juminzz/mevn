@@ -1,0 +1,2 @@
+<template>\n\t<div>\t</div>\n</template>\n\n<script>\nexport default {\n\tname: 'app',\n\tdata() {\n\treturn {}
+\n\t},\n\tmethods: {}\n}\n</script>\n\n<style>\n</style>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>비트코인</title>
+    <style>
+        .sp2{
+            margin-left: 40px;
+        }
+        .p6{
+            color: red;
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const sp1 = document.createElement("span");
+            const sp2 = document.createElement("span");
+            const p1 = document.createElement("p");
+            const p2 = document.createElement("p");
+            const p3 = document.createElement("p");
+            const p4 = document.createElement("p");
+            const p5 = document.createElement("p");
+            const p6 = document.createElement("p");
+            const hr = document.createElement("hr");
+            const option = document.createElement("button"); 
+            sp2.setAttribute('class','sp2')
+            p6.setAttribute('class','p6')
+            document.body.append(sp1,sp2,p1,hr,p4,p5,p6,option,p2,p3,)
+
+            const url = 'https://api.upbit.com/v1/ticker?markets=KRW-BTC'
+            fetch(url)
+            .then((response)=>response.json())
+            .then(data=>{
+               sp1.textContent = '날짜 :  '+data[0].trade_date
+               sp2.textContent = '거래시간 : '+data[0].trade_time
+               p1.textContent = '현재 비트코인 가격 : '+data[0].trade_price
+               option.textContent = '옵션'
+
+               localStorage.setItem('aa','전날 비트코인 가격 : '+data[0].prev_closing_price)
+               localStorage.setItem('bb','현재 비트코인 가격 : '+data[0].trade_price)
+               localStorage.setItem('cc','변화율 : '+(data[0].signed_change_rate*100).toFixed(2)+'%')
+               const aaa = localStorage.getItem('aa')
+               const bbb = localStorage.getItem('bb')
+               const ccc = localStorage.getItem('cc')
+               p4.textContent= aaa
+               p5.textContent= bbb
+               p6.textContent= ccc
+
+               option.addEventListener('click',()=>{
+                    p2.textContent = '오늘 최고가 : '+data[0].high_price
+                    p3.textContent = '오늘 최저가 : '+data[0].low_price
+               });
+            })
+        })
+    </script>
+</body>
+</html>
