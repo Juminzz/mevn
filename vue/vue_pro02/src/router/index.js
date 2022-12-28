@@ -11,17 +11,36 @@ const routes = [
     path: '/ex_1',
     name: 'ex_1',
     // route level code-splitting
-    // this generates a separate chunk (about.[ha sh].js) for this route
+    // this generates a separate chunk (ex.[ha sh].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ex_1.vue')
+    component: () => import(/* webpackChunkName: "ex" */ '../views/ex_1.vue')
   },
   {
     path: '/ex_2',
     name: 'ex_2',
     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
+    // this generates a separate chunk (ex.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ex_2.vue')
+    component: () => import(/* webpackChunkName: "ex" */ '../views/ex_2.vue')
+  },
+  {
+    path: '/ex_3',
+    name: 'ex_3',
+    // route level code-splitting
+    // this generates a separate chunk (ex.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "ex" */ '../views/ex_3.vue')
+  },
+  {
+    path: '/ex_4',
+    name: 'ex_4',
+    // route level code-splitting
+    // this generates a separate chunk (ex.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(
+        /* webpackChunkName: "ex" , webpackPrefetch:true */ '../views/ex_4.vue'
+      )
   }
 ]
 
