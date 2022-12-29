@@ -1,0 +1,18 @@
+req는 request의 줄임말입니다.
+직역한 것과 같이, 본문으로부터의 요청을 받는다고 생각하면 됩니다.
+
+req.body: body-parser 미들웨어가 만드는 요청의 본문을 해석한 객체이다.
+req.params : 파라미터의 데이터를 가져온다.
+req.query : 쿼리스트링의 정보를 가져온다.
+req.headers : header 값을 가져온다.
+req.cookies : 쿠키 값을 가져온다.
+req.ip : 프론트 아이피를 가져온다
+req.protoco : 프로토콜 http? https? 인지 가져온다
+req.url : 전체 URI 정보를 가져온다.
+
+res는 response의 줄임말입니다.
+function의 기능이 수행된 이후, 본문에서 수행될 것을 알려주는.... 그런 느낌입니다.
+
+res.send() : 클라이언트에 응답을 보낸다.
+res.json() : 클라이언트에 json을 만든다.
+res.redirect() : 페이지를 이동시킨다.

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <a href=""></a>
     <button
       @click="page = p"
       v-for="p in pages"

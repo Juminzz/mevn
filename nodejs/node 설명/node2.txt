@@ -1,0 +1,2 @@
+http /client > server > client / 끝
+socket / chat or 양방향 통신 /  

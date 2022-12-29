@@ -1,0 +1,9 @@
+import require 둘다 사용 가능
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+=> pakage.json에 "type": "module" 넣어줘야함
+
+import가 최신 문법이지만 require을 주로 사용함
+
+단축키 nnn 설정
+"const express = require('express')\nconst path = require('path')\nconst logger = require('morgan')\n\nconst app = express()\nconst port = 3000\nconst _path = path.join(__dirname, './dist')\nconsole.log(_path)\n\napp.use('/', express.static(_path))\napp.use(logger('tiny'))\n\n\napp.listen(port, () => {\n\tconsole.log(port + ' 로 연결되었습니다.')\n})"

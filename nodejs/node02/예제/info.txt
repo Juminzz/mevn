@@ -1,0 +1,2 @@
+이름 : 213  <br><br>나이 : 3213123<br><br><br> <button>
+  <a href="http://localhost:3000/">뒤로가기</button>

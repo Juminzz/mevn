@@ -1,0 +1,4 @@
+<div v-bind:class="{ active: isActive }"></div>
+active 라는 클래스를 동적으로 적용할수 있음
+isActive값이 true 이면 active클래스가 적용되고,
+false면 적용되지 않는다.
