@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>채팅창</title>
+    <style>
+        body{
+            margin: 0;
+            padding-bottom: 3rem;
+        }
+        #form{
+            background: rgba(0,0,0,0.2);
+            padding: 4px;
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            display: flex;
+            height: 45px;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+        }
+        #input{
+            border: none;
+            padding: 0 16px;
+            flex-grow: 1;
+            border-radius: 32px;
+            margin: 4px;
+        }
+        #input:focus{
+            outline: none;
+        }
+        #form button{
+            background: #333;
+            border: none;
+            padding: 0.1rem;
+            margin: 4px;
+            border-radius: 5px;
+            outline: none;
+            color: #fff;
+        }
+        #messages{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        #messages >li{
+            padding: 8px 16px;
+        }
+        #messages > li:nth-child(odd){  /* 홀수만 */
+            background: #efefef;
+        }
+    </style>
+</head>
+<body>
+    <ul id="messages"> 
+        <form action="" id="form">
+            <input id="input" autocomplete="off">
+            <button>전송</button>
+        </form>
+    </ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io()
+        let message = document.getElementById('messages')
+        let form = document.getElementById('form')
+        let input = document.getElementById('input')
+
+        /* 전송 */
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault() // preventDefault 이벤트를 막는용도 submit은 가능
+            if(input.value){
+                socket.emit('chat message',input.value)
+                input.value = ''
+            }
+        });
+
+        /* 수신 */
+        socket.on('chat message',(msg)=>{ // 모니터링
+            let talk = document.createElement('li')
+            talk.textContent = msg /// 메세지를 li에 추가
+            message.appendChild(talk) // 대화를 한줄씩 추가
+            window.scrollTo(0,document.body.scrollHeight) // 문서의 지정된 위치로 스크롤함
+        }) 
+    </script>
+</body>
+</html>

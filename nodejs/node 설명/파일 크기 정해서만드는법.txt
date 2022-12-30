@@ -1,0 +1,4 @@
+다운로드 문서에 쉬프트 우클릭 > 여기에 powershell 열기 
+> cmd 클릭후 > 
+fsutil file createNew dummy.mp4(파일이름+확장자)
+ 1024000000(용량 1기가바이트)

@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan')
 const multer = require('multer')
+const fs = require('fs')
 
 const app = express()
 const port = 3000
@@ -35,6 +36,13 @@ app.post('/up', upload.single('ufile'), (req, res, next) => {
   res.send(
     `<script>alert("파일 업로드 완료!");location.replace('index.html')</script>` // history.go(-1)
   )
+})
+
+fs.access(_path, (access) => {
+  console.log(access ? 'Found' : 'Not Found')
+})
+fs.mkdir(_path + 'node05', function (err) {
+  console.log('폴더 생성 완료!')
 })
 
 app.listen(port, () => {
