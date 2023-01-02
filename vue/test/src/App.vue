@@ -1,8 +1,7 @@
 <template>
   <nav>
-    <router-link to="./views/login.vue">Home</router-link> |
-    <router-link to="/login">로그인 </router-link>|
-    <router-link to="/chat"> 채팅창 </router-link>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
   </nav>
   <router-view />
 </template>

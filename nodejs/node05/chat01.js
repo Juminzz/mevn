@@ -12,11 +12,14 @@ const port = 3000
 const _path = path.join(__dirname, '/')
 console.log(_path)
 
-app.use('/', express.static(_path))
-app.use(logger('tiny'))
+// app.use('/', express.static(_path))
+// app.use(logger('tiny'))
 
-app.get('/', (req, res) => {
+app.get('/chat', (req, res) => {
   res.sendFile(__dirname + '/index.html')
+})
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/login.html')
 })
 
 // app.use(express.json())
