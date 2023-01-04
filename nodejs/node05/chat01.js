@@ -37,6 +37,17 @@ io.on('connection', (so) => {
   })
 })
 
+io.sockets.on('connection', function (socket) {
+  console.log('유저 접속 !')
+
+  socket.on('send', function (data) {
+    console.log('전달된 메세지: ', data.msg)
+  })
+  socket.on('disconnect', function () {
+    console.log('접속 종료 !')
+  })
+})
+
 server.listen(port, () => {
   console.log(port + ' 로 연결되었습니다.')
 })

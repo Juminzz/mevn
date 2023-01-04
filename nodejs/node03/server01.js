@@ -6,7 +6,7 @@ const multer = require('multer')
 const app = express()
 const port = 3000
 const _path = path.join(__dirname, '/')
-console.log(_path)
+// console.log(_path)
 
 app.use('/', express.static(_path))
 app.use(logger('tiny'))

@@ -1,10 +1,11 @@
 import express from 'express'
 import path from 'path'
 import logger from 'morgan'
+const __dirname = path.resolve()
+
 // const  express = require('express')
 // const path = require('path')   // 경로를 활용할 수 있는 유틸
 // const logger = require('morgan')
-const __dirname = path.resolve()
 
 const app = express()
 const port = 3000
