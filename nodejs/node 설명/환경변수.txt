@@ -1,0 +1,11 @@
+환경변수
+작업창이 켜져있는 동안 유지
+cmd : set 변수 = 값
+ps : $env 변수 = "값"
+리눅스 : export 변수 = 값
+
+node process.env.key 변수 = 값
+
+.env 파일 내 변수 = 값
+(.gitignore에 .env 등록 해야함)
+
