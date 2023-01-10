@@ -1,0 +1,7 @@
+5862046986:AAH1Af0d0Y9tVRNvnn1XpqySCm-meZHqGKc
+
+
+https://api.telegram.org/bot5862046986:AAH1Af0d0Y9tVRNvnn1XpqySCm-meZHqGKc/getMe
+
+
+https://api.telegram.org/bot5862046986:AAH1Af0d0Y9tVRNvnn1XpqySCm-meZHqGKc/getUpdates
