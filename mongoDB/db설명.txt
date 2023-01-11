@@ -1,0 +1,8 @@
+db.t1.find()  // t1안에 있는거 찾음
+db.t1.insertOne({name:"홍길동" , age:20}) // t1에 추가
+db.t1.insertMany([{name:"홍당무" , age:30},{name:"홍홍", age:40}])  // t1에 2개 추가
+db.t1.deleteOne({name:'홍길동'}) // name에 홍길동인거 삭제
+db.t1.deleteMany({}) // 다 삭제
+db.t1.updateMany({name:{$in:["홍당무","김","이"]}},{$push:{"something":{$each:[1,2,3]}}}  // in안에 하나라도 해당되면 someting에 1,2,3이 들어감
+db.t1.find({name:/\홍/}) // 앞에 홍 들어가는거 찾음
+db.t1.find({age:{$gte:20}}) // 나이가 20보다 큰 수 찾음

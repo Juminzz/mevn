@@ -1,0 +1,14 @@
+DB > collection > document
+DB 만들때 => use DB
+DB 삭제할때 => db.dropDatabase()
+collection 생성 : 
+1) 내용을 넣으면 자동생성
+2) db.createCollection('이름')
+collection 확인 : show collections
+collection 삭제 : db.콜렉션이름.rop
+
+document
+insertOne(index 먼저인거 1개지움)
+insertMany(다 지움)
+
+db.t1.updateMany({name:{$in:["홍당무","김","이"]}},{$push:{"something":{$each:[1,2,3]}}},{upsert:true,multi:true,new:true}) // 있는 목록중에 추가함

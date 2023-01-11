@@ -1,0 +1,7 @@
+DB > collection (DB 하위)
+
+db.createUser({user : "root", pwd:"root123", roles:["userAdminAnyDatabase"], mechanisms:["SCRAM-SHA-1"]})
+
+부등호
+EQ 같다 NEQ 같지않다 GT 크다 GTE 크거나같다
+LT 작다 LTE 작거나같다 IN 지정값있다 NIN 지정값없다
