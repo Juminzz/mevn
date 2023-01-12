@@ -10,7 +10,7 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 
   bot.sendMessage(chatId, resp)
 })
-
+console.log(lotto)
 bot.on('message', (msg) => {
   const text = msg.text
   const chatId = msg.chat.id
@@ -26,5 +26,3 @@ bot.on('message', (msg) => {
     bot.sendMessage(chatId, date.toLocaleString())
   }
 })
-
-// 5609891476:AAEounVcwee3kGjusF7skytAR1XjpcF5ZEU
