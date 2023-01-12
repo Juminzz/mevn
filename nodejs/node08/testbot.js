@@ -1,6 +1,7 @@
 require('dotenv').config()
 const TelegramBot = require('node-telegram-bot-api')
-const token = process.env.botid
+const token = process.env.bot2id
+const weat = process.env.weather
 
 const bot = new TelegramBot(token, { polling: true })
 
@@ -25,6 +26,8 @@ bot.on('message', (msg) => {
   if (text == '현재시간') {
     bot.sendMessage(chatId, date.toLocaleString())
   }
+  if (text == '날씨'){
+    bot.sendMessage(chatId, weat)
+  }
 })
 
-// 5609891476:AAEounVcwee3kGjusF7skytAR1XjpcF5ZEU
