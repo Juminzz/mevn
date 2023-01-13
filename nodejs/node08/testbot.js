@@ -26,8 +26,7 @@ bot.on('message', (msg) => {
   if (text == '현재시간') {
     bot.sendMessage(chatId, date.toLocaleString())
   }
-  if (text == '날씨'){
+  if (text == '날씨') {
     bot.sendMessage(chatId, weat)
   }
 })
-
