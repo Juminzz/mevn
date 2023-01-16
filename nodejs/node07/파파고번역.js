@@ -3,7 +3,7 @@ var express = require('express')
 var app = express()
 var client_id = process.env.nid
 var client_secret = process.env.npw
-var query = '집가고싶다'
+var query = '시험 화이팅'
 app.get('/translate', function (req, res) {
   var api_url = 'https://openapi.naver.com/v1/papago/n2mt'
   var request = require('request')

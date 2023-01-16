@@ -9,6 +9,7 @@ const main = async () => {
       }
     },
     {
+      // 스키마에 필드가 미리 준비되어 있어야 한다.
       $push: { something: { $each: [1, 2, 3] } }
     },
     {

@@ -6,7 +6,9 @@ const PhotoSchema = new Schema({
   id: Number,
   title: String,
   url: String,
-  thumbnailUrl: String
+  thumbnailUrl: String,
+  code: Number,
+  something: Array
 })
 
 module.exports = mongoose.model('Photo', PhotoSchema) //.'Photo')
