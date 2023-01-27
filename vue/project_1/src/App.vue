@@ -1,8 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">미세먼지</router-link> |
-    <router-link to="/about">번역기</router-link> |
-    <router-link to="/bob">학식정보</router-link>
+    <router-link to="/">1page</router-link> |
+    <router-link to="/about">2page</router-link>
   </nav>
   <router-view />
 </template>
