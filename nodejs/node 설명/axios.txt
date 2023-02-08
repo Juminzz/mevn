@@ -1,0 +1,6 @@
+axios
+    post, form 파파고
+
+서버에서 axios form 받을 때
+nodejs 객체
+axios post {key : ? , value : ? }

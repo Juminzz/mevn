@@ -1,0 +1,1 @@
+:src="'./sample1.jpg'"  // vue 안에 public 폴더 찾아낸다

@@ -1,0 +1,2 @@
+npm run lint -- --fix 계속 뜰때 스크립트 밑에
+/* eslint-disable */ 넣으면됨

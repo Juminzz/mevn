@@ -1,0 +1,3 @@
+npm i connect-history-api-fallback
+
+f5 눌렀을때 서버 안팅기게 하게 설치

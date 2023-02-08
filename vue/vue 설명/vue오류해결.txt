@@ -1,0 +1,26 @@
+v - 이름 = " "
+
+vue 오류
+
+Prettier
+format on save 체크
+컨트롤 쉬프트 p -> 문서서식 -> prettier 선택
+
+
+/* package.json */
+"rules": {
+      "space-before-function-paren": "off",
+      "vue/multi-word-component-names": "off"
+    }
+
+/* .prettierrc */
+{
+  "semi": false,
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "useTabs": false,
+  "trailingComma": "none",
+  "printWidth": 80,
+  "jsxBracketSameLine": false,
+  "endOfLine": "auto"	
+}

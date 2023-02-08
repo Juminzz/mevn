@@ -1,0 +1,6 @@
+input에
+accept는 받을 거 거르기. image/* 넣으면 image파일을 형식 상관없이 받겠다.
+
+file input은 CSS가 잘 안 먹어서 display:none으로 죽이고, label로 감싸서 기능만 살린 후 라벨을 꾸미는 추세
+
+ref는 뷰에서 사용할 수 있는 id 같은 느낌. this.$refs.해당ref 이름으로 조정 가능하다
