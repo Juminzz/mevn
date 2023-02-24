@@ -1,0 +1,13 @@
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true,
+  productionSourceMap: false, // MAP 파일 유무
+  css: {
+    extract: true // CSS 파일 별도 확인
+  },
+  configureWebpack: {
+    optimization: {
+      splitChunks: false // Chunks 파일 별도 확인
+    }
+  }
+})

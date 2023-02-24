@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Photo = require('./p343/photo.js')
 const fs = require('fs')
 const path = require('path')
-const mongoDB = 'mongodb://127.0.0.1/my_database'
+const mongoDB = 'mongodb://127.0.0.1/ttt'
 mongoose
   .connect(mongoDB, { useNewUrlParser: true })
   .then(() => console.log('connection successful'))

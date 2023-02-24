@@ -1,0 +1,13 @@
+https://api.steampowered.com/
+
+steam wep api = 2F3C187D6D9F8D709D1E5ECAB97CAA6F
+
+syeamshop api = P1Dr9ZRicRe9ZLTJn4ta1APq0_M
+
+https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=252490&count=1&format=json
+
+252490   76561198080227017
+
+할인 https://partner.steamgames.com/doc/marketing/discounts
+
+#game_area_purchase_section_add_to_cart_822363 > div.game_purchase_action > div > div.game_purchase_price.price

@@ -1,0 +1,16 @@
+1.POST , GET 을 nodejs 구현 axios
+2.mDB - 보안
+	1. admin에서 user를 생성
+	2. 그 계정으로 db를 생성
+
+3. CJS (백) , ESM(await) (프론트)
+require exports
+import export
+
+db.auth({user:"JM", pwd:"123456"}) // 권한 설정
+권한으로 들어가기 db.auth("아이디", "비번")
+
+DB : vuedb
+collection : vdb
+
+db.vdb.find()
