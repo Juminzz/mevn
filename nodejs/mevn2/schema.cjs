@@ -6,4 +6,5 @@ const VSchema = new Schema({
   content: String,
   date: Date
 })
+
 module.exports = mongoose.model('vdb', VSchema, 'vdb')

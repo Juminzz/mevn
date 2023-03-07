@@ -1,29 +1,28 @@
 <template>
-  <h1>Vuejs에서 MongoDB로 CRUD 실습</h1>
+  <h1>Vue.js + MongoDB CRUD 실습</h1>
   <div>
-    <h3>MongoDB로 <mark>C</mark>reate 하기</h3>
-    제목 : <input v-model="title" />| 날짜 :
-    <input type="date" v-model="date" /><br />
-    <input v-model="content" style="width: 400px" />
-    <button @click="dbc()">전송</button><br />
+    <h3>MonggoDB <mark>C</mark>reate</h3>
+    제목 : <input v-model="title" /><br />
+    일시 : <input type="date" v-model="date" /><br />
+    내용 : <input v-model="content" style="width: 400px" />
+    <button @click="dbc()">전송</button>
     <h4>{{ data }}</h4>
     <hr />
-    <h3>MongoDB로 <mark>R</mark>ead 하기</h3>
-    제목 : <input v-model="title" />| 날짜 :
-    <input type="date" v-model="date2" /><br />
-    <button @click="dbr()">읽어오기</button><br />
+    <h3>MonggoDB <mark>R</mark>ead</h3>
+    일시 : <input type="date" v-model="date2" /><br />
+    <button @click="dbr()">읽어오기</button>
     <h4>{{ data2 }}</h4>
     <hr />
-    <h3>MongoDB로 <mark>U</mark>pdate 하기</h3>
-    제목 : <input v-model="title" />| 날짜 :
-    <input type="date" v-model="date3" /><br />
-    <button @click="dbu()">수정하기</button><br />
+    <h3>MonggoDB<mark>U</mark>pdate</h3>
+    제목 : <input v-model="title3" /><br />
+    일시 : <input type="date" v-model="date3" /><br />
+    내용 : <input v-model="content3" style="width: 400px" />
+    <button @click="dbu()">1개 데이터 수정</button>
     <h4>{{ data3 }}</h4>
     <hr />
-    <h3>MongoDB로 <mark>D</mark>elete 하기</h3>
-    제목 : <input v-model="title" />| 날짜 :
-    <input type="date" v-model="date4" /><br />
-    <button @click="dbd()">1개 삭제하기</button><br />
+    <h3>MonggoDB<mark>D</mark>elete</h3>
+    일시 : <input type="date" v-model="date4" /><br />
+    <button @click="dbd()">1개 데이터 삭제</button>
     <h4>{{ data4 }}</h4>
     <hr />
   </div>
@@ -36,39 +35,42 @@ export default {
   name: 'app',
   data() {
     return {
+      /* CRUD */
       data: '',
       data2: '',
       data3: '',
       data4: '',
-      title: '',
-      content: '',
-      title3: '',
-      content3: '',
+
+      // 오늘 날짜 초기값으로 넣어주기.
       date: new Date().toISOString().substring(0, 10),
       date2: new Date().toISOString().substring(0, 10),
       date3: new Date().toISOString().substring(0, 10),
-      date4: new Date().toISOString().substring(0, 10)
+      date4: new Date().toISOString().substring(0, 10),
+
+      /* CRUD */
+      title: '', // create용
+      content: '', // create용
+      title3: '', // update용
+      content3: '' // update용
     }
   },
   methods: {
-    dbc: function () {
-      this.data = 'DB에 저장중....'
+    dbc() {
+      this.data = 'DB에 저장 중...' // 스피너 역할
       axios
         .post('/dbc', {
           title: this.title,
-          date: this.date,
-          content: this.content
+          content: this.content,
+          date: this.date
         })
-        .then((res) => {
-          this.data = res.data
-        })
+        .then((res) => (this.data = res.data))
     },
-    dbr: function () {
-      this.data2 = 'DB 데이터 로딩중..'
+    dbr() {
+      this.data2 = 'DB에서 불러오는 중...' // 스피너 역할
       axios.get('/dbr/' + this.date2).then((res) => (this.data2 = res.data))
     },
-    dbu: function () {
-      this.data3 = 'DB에 저장중..'
+    dbu() {
+      this.data3 = 'DB 내용 수정 중...' // 스피너 역할
       axios
         .post('/dbu', {
           title: this.title3,
@@ -77,9 +79,11 @@ export default {
         })
         .then((res) => (this.data3 = res.data))
     },
-    dbd: function () {
-      this.data4 = 'DB 데이터 삭제중..'
-      axios.get('/dbd/' + this.date4).then((res) => (this.data4 = res.data))
+    dbd() {
+      if (confirm('삭제하시겠습니까?')) {
+        this.data4 = 'DB 내용 삭제 중...' // 스피너 역할
+        axios.get('/dbd/' + this.date4).then((res) => (this.data4 = res.data))
+      }
     }
   }
 }

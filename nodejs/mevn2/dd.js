@@ -45,7 +45,7 @@ app.post('/dbc', (req, res) => {
 
 // Read of CRUD
 app.get('/dbr/:date', (req, res) => {
-  // 패쓰 방식
+  // 패쓰 방식.
   const date = req.params.date
   // 즉시 실행 함수 사용해도 되지만, 일부러 다른 방식으로 해보기.
   const read = async () => {
@@ -61,28 +61,34 @@ app.get('/dbr/:date', (req, res) => {
 
 // Update of CRUD
 app.post('/dbu', (req, res) => {
+  const title = req.body.title
+  const content = req.body.content
+  const date = req.body.date
+  // 즉시 실행 함수로 실행.(윗 단에 ;를 달아줘야 즉시 실행 함수 동작 가능.)
   ;(async () => {
     const t = await VSchema.updateOne(
       {
-        date: req.body.date
+        date
       },
       {
         $set: {
-          title: req.body.title,
-          content: req.body.content,
-          date: req.body.date
+          title,
+          content,
+          date
         }
       },
-      { upsert: true }
+      {
+        upsert: true
+      }
     )
-    console.log(t)
-    res.send('수정완료')
+    console.log(t) // 확인용.
+    res.send('수정 완료.')
   })()
 })
 
 // Delete of CRUD
 app.get('/dbd/:date', (req, res) => {
-  // 패쓰 방식
+  // 패쓰 방식.
   const date = req.params.date
   const t = VSchema.deleteOne({
     date: {

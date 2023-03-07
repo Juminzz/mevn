@@ -1,0 +1,1 @@
+mongosh에서 먼저 admin에서 db.auth({user:"사용자아이디" , pwd:"비밀번호"})를 입력하고 use 사용할 컬렉션으로 이동한다.

@@ -1,0 +1,17 @@
+쿠키 = 나한테 저장됨
+세션 = 서버에 저장됨
+쿠키(토큰) = 쿠키를 대용하는 역할
+
+https://jwt.io/   // jwt 사이트
+https://pronist.dev/143  // jwt 설명 사이트 
+
+JWT = json 형태로 된 웹 토큰
+JWT (struct Header | Payload | Signature) // 암호화 된 쿠키
+struct Header = base64가 들어있음
+Signature = struct Header | Payload를 암호화 할 수 있는 코드
+
+프로토콜
+http 규약
+
+localstorage = 무한대로 저장이 가능하다
+localsession = 저장 값이 정해져있음
