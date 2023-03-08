@@ -1,0 +1,11 @@
+TypeScript 기초 세팅
+
+1. npm i typescript -g
+2. tsc --init  tsc 초기화
+2-1. tsc를 적으면 ts파일내용을 js에 그대로 수정됨
+3. tsconfig.json에 "outDir": "./dist",
+4. typescript 확장설치 
+5. tsc -w는 js파일이 실시간으로 수정되는 명령어
+6. npm i ts-node -g 
+
+https://kkangdda.tistory.com/67 타입스크립트 문법 설명 사이트

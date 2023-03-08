@@ -4,13 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>danfo02 Series</title>
+    <title>danfo03 danfo</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.js"></script>
   </head>
   <body>
+    <a href="javascript:window.history.back();">뒤로가기</a>
+    <h3>
+      <pre>
+        // const tf = dfd.tensorflow
+        let tensor_arr = tf.tensor([11, 22, 33, 44, 55])
+        let s = new dfd.Series(tensor_arr)
+        s.print()
+      </pre>
+    </h3>
     <script>
-      const s = new dfd.Series([1, 3, 5, undefined, 6, 8])
+      // const tf = dfd.tensorflow
+      let tensor_arr = tf.tensor([11, 22, 33, 44, 55])
+      let s = new dfd.Series(tensor_arr)
       s.print()
     </script>
   </body>
