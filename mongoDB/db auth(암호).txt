@@ -1,0 +1,6 @@
+// admin
+db.auth({user:"JM", pwd:"123456"})
+db.auth("admin","123456)
+
+// base64
+db.auth("base64","12345")
