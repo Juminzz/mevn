@@ -102,3 +102,7 @@ app.get('/dbd/:date', (req, res) => {
 /* //몽고DB CRUD */
 
 app.listen(3000, () => console.log('3000포트로 서버 시작.'))
+
+// .env
+// mdbid = 'vue'
+// mdbpw = 1234
