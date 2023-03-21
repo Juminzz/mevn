@@ -4,3 +4,6 @@ db.auth("admin","123456)
 
 // base64
 db.auth("base64","12345")
+
+// trif
+db.auth("dtd","123123")
